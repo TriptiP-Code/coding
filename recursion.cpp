@@ -83,7 +83,55 @@ using namespace std;
 
 // sum of 1 to n using recursion
 
+// int f(int n)
+// {
+//   if(n==0) return 0;
+//   return n+f(n-1);
+
+// }
+
+// int main(){
+//   cout<<"the sum is : "<<f(10)<<endl;
+
+//   return 0;
+// }
+
+// factorial of n number
+
+// int fact(int n){
+//   if(n==0) return 1;
+//   return n*fact(n-1);
+// }
+// int main(){
+//   cout<<fact(10);
+//   return 0;
+// }
+
+void change(int arr[],int n, int i)
+{
+
+  if(i>=n/2) return ;
+
+  swap(arr[i] ,arr[n-i-1]);
+  change(arr,n,i+1);
 
 
 
+  return;
+}
+int main(){
 
+  int arr[10]={1,2,3,4,5,6,7,8,9,10};
+
+  change(arr,10,0);
+
+  cout<<"the swaped array is "<<endl;
+
+  for(int i=0;i<10;i++){
+    cout<<arr[i]<<" ";
+  }
+
+
+
+  return 0;
+}
