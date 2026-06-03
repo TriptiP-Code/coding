@@ -1,4 +1,5 @@
 #include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 
@@ -107,31 +108,90 @@ using namespace std;
 //   return 0;
 // }
 
-void change(int arr[],int n, int i)
-{
+// void change(int arr[],int n, int i)
+// {
 
-  if(i>=n/2) return ;
+//   if(i>=n/2) return ;
 
-  swap(arr[i] ,arr[n-i-1]);
-  change(arr,n,i+1);
+//   swap(arr[i] ,arr[n-i-1]);
+//   change(arr,n,i+1);
 
 
 
-  return;
+//   return;
+// }
+// int main(){
+
+//   int arr[10]={1,2,3,4,5,6,7,8,9,10};
+
+//   change(arr,10,0);
+
+//   cout<<"the swaped array is "<<endl;
+
+//   for(int i=0;i<10;i++){
+//     cout<<arr[i]<<" ";
+//   }
+
+
+
+//   return 0;
+// }
+
+// checking whether a string is palindrom or not using the recusrsion logic
+
+// bool palin(string s,int i){
+
+//   if(i>= s.size()/2) return true;
+
+//   if(s[i]!=s[s.size() -i -1]) return false;
+
+//   return palin(s,i+1);
+
+// }
+
+// int main(){
+
+//   string s="Tripti";
+//   if (palin(s,0) ==1) cout<<"string is palin";
+//   else cout<<"string not palin";
+//   return 0;
+// }
+
+// Fibonaci series without recursion
+
+// int main(){
+
+//   int i=0 , j=1, sum=0,n;
+
+//   cout<<"enter the number"<<endl;
+//   cin>>n;
+//   cout<<i<<" "<<j<<" ";
+
+//   for (int k=3; k<=n;k++){
+
+//     sum=i+j;
+//     cout<<sum<<" ";
+//     i=j;
+//     j=sum;
+
+//   }
+
+//   return 0;
+// }
+
+// fibonaci series with recursion(multiple recursion)
+int f(int n){
+
+  if(n<=1) return n;
+
+  int last =f(n-1);
+  int slast=f(n-2);
+  return last+slast;
 }
+
 int main(){
 
-  int arr[10]={1,2,3,4,5,6,7,8,9,10};
-
-  change(arr,10,0);
-
-  cout<<"the swaped array is "<<endl;
-
-  for(int i=0;i<10;i++){
-    cout<<arr[i]<<" ";
-  }
-
-
+  cout<<f(10);
 
   return 0;
 }
