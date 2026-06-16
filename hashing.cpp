@@ -131,27 +131,62 @@ using namespace std;
 //   return 0;
 // }
 
+// Character hashing with map
+
+// int main()
+// {
+//   string s;
+//   cout<<"enter the string"<<endl;
+//   cin>>s;
+//   // cout<<"your entered string is :"<<s<<endl;
+//   // cout<<"the size of string is :"<<s.size()<<endl;
+//   // for(int j=0;j<s.size();j++){
+//   //   cout<<"["<<j<<"]"<<"  is :"<<s[j]<<endl;
+//   // }
+
+//   map<char,int>mpp;
+
+//   for(int i=0;i<s.size();i++)
+//   {
+//     mpp[s[i]]++;
+//   }
+//   cout<<"here comes the character and its frequency in the string"<<endl;
+//   for(auto it : mpp){
+//     cout<<it.first<<"-->"<<it.second<<endl;
+//   }
+//   return 0;
+// }
+
+// Calculating the highest frequency of element in the array
 
 int main()
 {
-  string s;
-  cout<<"enter the string"<<endl;
-  cin>>s;
-  // cout<<"your entered string is :"<<s<<endl;
-  // cout<<"the size of string is :"<<s.size()<<endl;
-  // for(int j=0;j<s.size();j++){
-  //   cout<<"["<<j<<"]"<<"  is :"<<s[j]<<endl;
-  // }
+  int arr[10]={1,2,2,2,4,5,6,7,7,7};
 
-  map<char,int>mpp;
-
-  for(int i=0;i<s.size();i++)
+  map<int , int>mpp;
+  for(int i=0;i<10;i++)
   {
-    mpp[s[i]]++;
+    mpp[arr[i]]++;
   }
-  cout<<"here comes the character and its frequency in the string"<<endl;
+  int highfrequency=0;
+
   for(auto it : mpp){
-    cout<<it.first<<"-->"<<it.second<<endl;
+    if(it.second > highfrequency){
+      highfrequency=it.second;
+    }
+
   }
+
+  cout<<"highest frequency is : "<<highfrequency;
+  cout<<"  and the elements having highest frequency are : ";
+
+  for(auto it : mpp)
+  {
+    if(it.second==highfrequency)
+    {
+      cout<<it.first<<" ";
+    }
+  }
+  
   return 0;
 }
