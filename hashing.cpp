@@ -98,4 +98,60 @@ using namespace std;
 //   return 0;
 // }
 
+// hashing with the help of map
 
+// int main(){
+
+//   int n;
+//   cout<<"enter the number of elements in the array"<<endl;
+//   cin>>n;
+//   int arr[n];
+//   map<int , int>mpp;
+//   cout<<"enter the array elements one by one"<<endl;
+//   for (int i =0;i<n;i++){
+//     cin>>arr[i];
+//     mpp[arr[i]]++;
+//   }
+
+//   for(auto it : mpp){
+//     cout<<it.first <<" -->"<<it.second<<endl;
+//   }
+
+//   int q;
+//   cout<<"enter the number of queries you have"<<endl;
+//   cin>>q;
+//   while(q--)
+//   {
+//     int number;
+//     cout<<"enter the number whose occurance you want to know"<<endl;
+//     cin>>number;
+//     cout<<mpp[number]<<endl;
+//   }
+  
+//   return 0;
+// }
+
+
+int main()
+{
+  string s;
+  cout<<"enter the string"<<endl;
+  cin>>s;
+  // cout<<"your entered string is :"<<s<<endl;
+  // cout<<"the size of string is :"<<s.size()<<endl;
+  // for(int j=0;j<s.size();j++){
+  //   cout<<"["<<j<<"]"<<"  is :"<<s[j]<<endl;
+  // }
+
+  map<char,int>mpp;
+
+  for(int i=0;i<s.size();i++)
+  {
+    mpp[s[i]]++;
+  }
+  cout<<"here comes the character and its frequency in the string"<<endl;
+  for(auto it : mpp){
+    cout<<it.first<<"-->"<<it.second<<endl;
+  }
+  return 0;
+}
